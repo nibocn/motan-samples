@@ -18,6 +18,7 @@
         <junit.version>4.12</junit.version>
         <logback.version>1.1.8</logback.version>
         <slf4j.version>1.7.22</slf4j.version>
+        <motan.version>0.2.2</motan.version>
 
         <!-- 相关插件版本定义 -->
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
@@ -63,6 +64,19 @@
             <version>${slf4j.version}</version>
         </dependency>
         <!-- log end -->
+
+        <!-- motan begin -->
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-core</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-transport-netty</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+        <!-- motan end -->
 
     </dependencies>
 

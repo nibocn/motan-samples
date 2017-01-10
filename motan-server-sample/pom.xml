@@ -11,9 +11,6 @@
     </parent>
     <artifactId>motan-server-sample</artifactId>
     <name>motan-server-sample</name>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <dependencies>
     </dependencies>
 </project>

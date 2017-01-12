@@ -29,8 +29,9 @@
         <!-- end -->
     </properties>
     <modules>
-        <module>motan-server-sample</module>
+        <module>motan-rpc-api</module>
         <module>motan-client-sample</module>
+        <module>motan-server-sample</module>
     </modules>
 
     <dependencies>

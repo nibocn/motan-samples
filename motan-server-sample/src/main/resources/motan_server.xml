@@ -8,8 +8,11 @@
     <motan:registry regProtocol="consul" name="my_consul" address="127.0.0.1:8500"/>
     <bean id="demoRpcServiceImpl" class="me.nibo.motan.server.rpc.DemoRpcServiceImpl"/>
     <bean id="userRpcServiceImpl" class="me.nibo.motan.server.rpc.UserRpcServiceImpl"/>
+    <motan:basicService id="myBasicService" registry="my_consul" shareChannel="true" export="8002"
+                        group="myGroup" module="myModule" application="myApplication"/>
+
     <motan:service interface="me.nibo.motan.rpc.api.DemoRpcService" ref="demoRpcServiceImpl"
-                   registry="my_consul" export="8002"/>
+                   basicService="myBasicService"/>
     <motan:service interface="me.nibo.motan.rpc.api.UserRpcService" ref="userRpcServiceImpl"
-                    registry="my_consul" export="8003"/>
+                   basicService="myBasicService"/>
 </beans>

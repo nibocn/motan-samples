@@ -1,5 +1,7 @@
 package me.nibo.motan.server;
 
+import com.weibo.api.motan.common.MotanConstants;
+import com.weibo.api.motan.util.MotanSwitcherUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +17,7 @@ public class RpcServer {
     public static void main(String[] args) {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("motan_server.xml");
+        MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER, true);
         LOGGER.info("RPC server start...");
     }
 }

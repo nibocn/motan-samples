@@ -6,10 +6,12 @@
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
    http://api.weibo.com/schema/motan http://api.weibo.com/schema/motan.xsd">
     <motan:registry regProtocol="consul" name="my_consul" address="127.0.0.1:8500"/>
+
     <bean id="demoRpcServiceImpl" class="me.nibo.motan.server.rpc.DemoRpcServiceImpl"/>
     <bean id="userRpcServiceImpl" class="me.nibo.motan.server.rpc.UserRpcServiceImpl"/>
+
     <motan:basicService id="myBasicService" registry="my_consul" shareChannel="true" export="8002"
-                        group="myGroup" module="myModule" application="myApplication"/>
+                        group="motan_server_sample" module="motan_server_sample"/>
 
     <motan:service interface="me.nibo.motan.rpc.api.DemoRpcService" ref="demoRpcServiceImpl"
                    basicService="myBasicService"/>
